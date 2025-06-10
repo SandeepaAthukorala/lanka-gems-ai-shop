@@ -1,89 +1,96 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Design system for JewelryPro */
+/* Dark Luxury Design System for JewelryPro */
 
 @layer base {
   :root {
-    --background: 213 216 220;
-    --foreground: 46 64 83;
+    --background: 12 12 12;
+    --foreground: 245 245 245;
 
-    --card: 191 201 202;
-    --card-foreground: 46 64 83;
+    --card: 20 20 20;
+    --card-foreground: 245 245 245;
 
-    --popover: 191 201 202;
-    --popover-foreground: 46 64 83;
+    --popover: 20 20 20;
+    --popover-foreground: 245 245 245;
 
-    --primary: 241 196 15;
-    --primary-foreground: 46 64 83;
+    --primary: 255 215 0;
+    --primary-foreground: 12 12 12;
 
-    --secondary: 213 216 220;
-    --secondary-foreground: 46 64 83;
+    --secondary: 30 30 30;
+    --secondary-foreground: 245 245 245;
 
-    --muted: 213 216 220;
-    --muted-foreground: 170 183 184;
+    --muted: 25 25 25;
+    --muted-foreground: 163 163 163;
 
-    --accent: 241 196 15;
-    --accent-foreground: 46 64 83;
+    --accent: 255 215 0;
+    --accent-foreground: 12 12 12;
 
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
 
-    --border: 170 183 184;
-    --input: 170 183 184;
-    --ring: 241 196 15;
+    --border: 40 40 40;
+    --input: 30 30 30;
+    --ring: 255 215 0;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 191 201 202;
-    --sidebar-foreground: 46 64 83;
-    --sidebar-primary: 241 196 15;
-    --sidebar-primary-foreground: 46 64 83;
-    --sidebar-accent: 213 216 220;
-    --sidebar-accent-foreground: 46 64 83;
-    --sidebar-border: 170 183 184;
-    --sidebar-ring: 241 196 15;
+    --sidebar-background: 15 15 15;
+    --sidebar-foreground: 245 245 245;
+    --sidebar-primary: 255 215 0;
+    --sidebar-primary-foreground: 12 12 12;
+    --sidebar-accent: 25 25 25;
+    --sidebar-accent-foreground: 245 245 245;
+    --sidebar-border: 35 35 35;
+    --sidebar-ring: 255 215 0;
+
+    /* Custom luxury colors */
+    --gold-primary: 255 215 0;
+    --gold-secondary: 218 165 32;
+    --gold-muted: 184 134 11;
+    --silver-primary: 192 192 192;
+    --silver-secondary: 169 169 169;
+    --silver-muted: 128 128 128;
   }
 
   .dark {
-    --background: 46 64 83;
-    --foreground: 213 216 220;
+    --background: 8 8 8;
+    --foreground: 250 250 250;
 
-    --card: 55 75 95;
-    --card-foreground: 213 216 220;
+    --card: 15 15 15;
+    --card-foreground: 250 250 250;
 
-    --popover: 55 75 95;
-    --popover-foreground: 213 216 220;
+    --popover: 15 15 15;
+    --popover-foreground: 250 250 250;
 
-    --primary: 241 196 15;
-    --primary-foreground: 46 64 83;
+    --primary: 255 215 0;
+    --primary-foreground: 8 8 8;
 
-    --secondary: 65 85 105;
-    --secondary-foreground: 213 216 220;
+    --secondary: 25 25 25;
+    --secondary-foreground: 250 250 250;
 
-    --muted: 65 85 105;
-    --muted-foreground: 170 183 184;
+    --muted: 20 20 20;
+    --muted-foreground: 170 170 170;
 
-    --accent: 241 196 15;
-    --accent-foreground: 46 64 83;
+    --accent: 255 215 0;
+    --accent-foreground: 8 8 8;
 
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
 
-    --border: 65 85 105;
-    --input: 65 85 105;
-    --ring: 241 196 15;
+    --border: 35 35 35;
+    --input: 25 25 25;
+    --ring: 255 215 0;
 
-    --sidebar-background: 55 75 95;
-    --sidebar-foreground: 213 216 220;
-    --sidebar-primary: 241 196 15;
-    --sidebar-primary-foreground: 46 64 83;
-    --sidebar-accent: 65 85 105;
-    --sidebar-accent-foreground: 213 216 220;
-    --sidebar-border: 65 85 105;
-    --sidebar-ring: 241 196 15;
+    --sidebar-background: 10 10 10;
+    --sidebar-foreground: 250 250 250;
+    --sidebar-primary: 255 215 0;
+    --sidebar-primary-foreground: 8 8 8;
+    --sidebar-accent: 20 20 20;
+    --sidebar-accent-foreground: 250 250 250;
+    --sidebar-border: 30 30 30;
+    --sidebar-ring: 255 215 0;
   }
 }
 
@@ -94,6 +101,9 @@
 
   body {
     @apply bg-background text-foreground font-inter;
+    background: radial-gradient(ellipse at top, rgba(255, 215, 0, 0.02) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(192, 192, 192, 0.01) 0%, transparent 50%),
+                hsl(var(--background));
   }
 
   .font-sinhala {
@@ -103,18 +113,176 @@
   .font-tamil {
     font-family: 'Noto Sans Tamil', sans-serif;
   }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--gold-muted));
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--gold-secondary));
+  }
 }
 
 @layer components {
+  .luxury-card {
+    @apply bg-card/90 backdrop-blur-sm border border-border/50 shadow-2xl;
+    background: linear-gradient(135deg, 
+      rgba(255, 215, 0, 0.03) 0%, 
+      rgba(20, 20, 20, 0.95) 20%, 
+      rgba(15, 15, 15, 0.98) 80%, 
+      rgba(192, 192, 192, 0.02) 100%);
+    box-shadow: 
+      0 0 0 1px rgba(255, 215, 0, 0.1),
+      0 4px 20px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 215, 0, 0.1);
+  }
+
+  .luxury-card:hover {
+    box-shadow: 
+      0 0 0 1px rgba(255, 215, 0, 0.2),
+      0 8px 30px rgba(0, 0, 0, 0.6),
+      0 0 20px rgba(255, 215, 0, 0.05),
+      inset 0 1px 0 rgba(255, 215, 0, 0.15);
+    transform: translateY(-2px);
+  }
+
   .glass-card {
-    @apply bg-card/80 backdrop-blur-sm border border-border/50 shadow-lg;
+    @apply luxury-card;
   }
 
   .gradient-gold {
-    background: linear-gradient(135deg, #F1C40F 0%, #D4AC0D 50%, #B7950B 100%);
+    background: linear-gradient(135deg, 
+      rgb(255, 215, 0) 0%, 
+      rgb(218, 165, 32) 50%, 
+      rgb(184, 134, 11) 100%);
   }
 
-  .gradient-emerald {
-    background: linear-gradient(135deg, #BFC9CA 0%, #AAB7B8 50%, #85929E 100%);
+  .gradient-silver {
+    background: linear-gradient(135deg, 
+      rgb(192, 192, 192) 0%, 
+      rgb(169, 169, 169) 50%, 
+      rgb(128, 128, 128) 100%);
   }
+
+  .luxury-button {
+    @apply relative overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, 
+      rgba(255, 215, 0, 0.9) 0%, 
+      rgba(218, 165, 32, 0.9) 100%);
+    box-shadow: 
+      0 0 0 1px rgba(255, 215, 0, 0.3),
+      0 4px 15px rgba(255, 215, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .luxury-button:hover {
+    box-shadow: 
+      0 0 0 1px rgba(255, 215, 0, 0.5),
+      0 6px 20px rgba(255, 215, 0, 0.3),
+      0 0 30px rgba(255, 215, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .luxury-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.2), 
+      transparent);
+    transition: left 0.5s;
+  }
+
+  .luxury-button:hover::before {
+    left: 100%;
+  }
+
+  .silver-accent {
+    color: rgb(192, 192, 192);
+  }
+
+  .gold-accent {
+    color: rgb(255, 215, 0);
+  }
+
+  .luxury-glow {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+  }
+
+  .luxury-glow:hover {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+  }
+}
+
+/* Custom selection colors */
+::selection {
+  background: rgba(255, 215, 0, 0.2);
+  color: rgb(255, 215, 0);
+}
+
+/* Focus styles */
+.focus-luxury:focus {
+  outline: none;
+  box-shadow: 
+    0 0 0 2px rgba(255, 215, 0, 0.3),
+    0 0 20px rgba(255, 215, 0, 0.1);
 }

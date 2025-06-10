@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -58,39 +57,47 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Custom brand colors from your palette
-				brand: {
-					dark: '#2E4053',
-					light: '#BFC9CA',
-					medium: '#AAB7B8',
-					lighter: '#D5D8DC',
-					accent: '#F1C40F',
+				// Luxury color palette
+				luxury: {
+					black: '#0C0C0C',
+					'black-light': '#141414',
+					'black-lighter': '#1A1A1A',
+					'gray-dark': '#1E1E1E',
+					'gray': '#282828',
+					'gray-light': '#323232',
+					'gray-lighter': '#3C3C3C',
 				},
 				gold: {
-					50: '#fefdf4',
-					100: '#fdf9e3',
-					200: '#faf0c2',
-					300: '#F1C40F',
-					400: '#D4AC0D',
-					500: '#B7950B',
-					600: '#9A7D0A',
-					700: '#7D6608',
-					800: '#614F06',
-					900: '#453804',
-					950: '#2A2202',
+					50: '#FFFEF7',
+					100: '#FFFAEB',
+					200: '#FFF2CC',
+					300: '#FFE699',
+					400: '#FFD700',
+					500: '#DAA520',
+					600: '#B8860B',
+					700: '#996F00',
+					800: '#7A5800',
+					900: '#5C4200',
+					950: '#3D2C00',
+					DEFAULT: '#FFD700',
+					muted: '#B8860B',
+					dark: '#996F00',
 				},
-				gray: {
-					50: '#F8F9FA',
-					100: '#D5D8DC',
-					200: '#BFC9CA',
-					300: '#AAB7B8',
-					400: '#85929E',
-					500: '#6C7B7F',
-					600: '#566465',
-					700: '#434D4B',
-					800: '#2E4053',
-					900: '#1C2833',
-					950: '#0F1419',
+				silver: {
+					50: '#FAFAFA',
+					100: '#F5F5F5',
+					200: '#E5E5E5',
+					300: '#D4D4D4',
+					400: '#C0C0C0',
+					500: '#A9A9A9',
+					600: '#808080',
+					700: '#696969',
+					800: '#505050',
+					900: '#404040',
+					950: '#262626',
+					DEFAULT: '#C0C0C0',
+					muted: '#808080',
+					dark: '#696969',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -107,6 +114,12 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			boxShadow: {
+				'luxury': '0 0 0 1px rgba(255, 215, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 215, 0, 0.1)',
+				'luxury-hover': '0 0 0 1px rgba(255, 215, 0, 0.2), 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.05)',
+				'gold-glow': '0 0 20px rgba(255, 215, 0, 0.3)',
+				'silver-glow': '0 0 20px rgba(192, 192, 192, 0.2)',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -128,7 +141,7 @@ export default {
 				'fade-in': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateY(10px)'
+						transform: 'translateY(20px)'
 					},
 					'100%': {
 						opacity: '1',
@@ -144,13 +157,34 @@ export default {
 						transform: 'translateX(0)',
 						opacity: '1'
 					}
+				},
+				'glow': {
+					'0%': {
+						boxShadow: '0 0 20px rgba(255, 215, 0, 0.1)'
+					},
+					'100%': {
+						boxShadow: '0 0 30px rgba(255, 215, 0, 0.2)'
+					}
+				},
+				'shimmer': {
+					'0%': {
+						transform: 'translateX(-100%)'
+					},
+					'100%': {
+						transform: 'translateX(100%)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.3s ease-out',
-				'slide-in': 'slide-in 0.3s ease-out'
+				'fade-in': 'fade-in 0.6s ease-out',
+				'slide-in': 'slide-in 0.5s ease-out',
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				'shimmer': 'shimmer 2s infinite',
+			},
+			backdropBlur: {
+				xs: '2px',
 			}
 		}
 	},
