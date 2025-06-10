@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'sinhala': ['Noto Sans Sinhala', 'sans-serif'],
+				'tamil': ['Noto Sans Tamil', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,6 +58,32 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				gold: {
+					50: '#fefdf4',
+					100: '#fdf9e3',
+					200: '#faf0c2',
+					300: '#f5e197',
+					400: '#eecf6a',
+					500: '#e5b947',
+					600: '#d4a332',
+					700: '#b08429',
+					800: '#8f6a28',
+					900: '#765625',
+					950: '#442e11',
+				},
+				emerald: {
+					50: '#ecfdf5',
+					100: '#d1fae5',
+					200: '#a7f3d0',
+					300: '#6ee7b7',
+					400: '#34d399',
+					500: '#10b981',
+					600: '#059669',
+					700: '#047857',
+					800: '#065f46',
+					900: '#064e3b',
+					950: '#022c22',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +116,33 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'slide-in': {
+					'0%': {
+						transform: 'translateX(-100%)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateX(0)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'slide-in': 'slide-in 0.3s ease-out'
 			}
 		}
 	},
